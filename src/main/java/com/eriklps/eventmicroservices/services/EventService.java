@@ -2,6 +2,7 @@ package com.eriklps.eventmicroservices.services;
 
 import com.eriklps.eventmicroservices.domain.Event;
 import com.eriklps.eventmicroservices.domain.Subscription;
+
 import com.eriklps.eventmicroservices.dtos.EmailRequestDTO;
 import com.eriklps.eventmicroservices.dtos.EventRequestDTO;
 import com.eriklps.eventmicroservices.exceptions.EventFullException;
@@ -31,7 +32,7 @@ public class EventService {
     }
 
     public List<Event> getUpcomingEvents() {
-        return eventRepository.findByDateAfterOrderByDate(LocalDateTime.now());
+        return eventRepository.findUpcomingEvents(LocalDateTime.now());
     }
 
     public Event createEvent(EventRequestDTO eventRequest) {
