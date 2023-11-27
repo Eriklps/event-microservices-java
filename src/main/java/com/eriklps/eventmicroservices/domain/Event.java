@@ -22,6 +22,7 @@ public class Event {
     private String title;
     private String description;
 
+
     public Event(EventRequestDTO eventRequest){
         this.date = eventRequest.date();
         this.maxParticipants = eventRequest.maxParticipants();
