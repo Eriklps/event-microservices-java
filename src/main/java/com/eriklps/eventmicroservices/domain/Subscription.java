@@ -1,5 +1,6 @@
 package com.eriklps.eventmicroservices.domain;
 
+import com.eriklps.eventmicroservices.dtos.EventRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,4 +21,9 @@ public class Subscription {
     private Event event;
 
     private String participantEmail;
+
+    public Subscription(Event event, String participantEmail){
+        this.event = event;
+        this.participantEmail = participantEmail;
+    }
 }
