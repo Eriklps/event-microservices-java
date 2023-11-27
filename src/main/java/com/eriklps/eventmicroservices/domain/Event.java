@@ -31,4 +31,19 @@ public class Event {
         this.description = eventRequest.description();
     }
 
+    public int getMaxParticipants() {
+        return maxParticipants;
+    }
+
+    public void setMaxParticipants(int maxParticipants) {
+        this.maxParticipants = maxParticipants;
+    }
+
+    public int getRegisteredParticipants() {
+        return registeredParticipants;
+    }
+
+    public void setRegisteredParticipants(int registeredParticipants) {
+        this.registeredParticipants = registeredParticipants;
+    }
 }

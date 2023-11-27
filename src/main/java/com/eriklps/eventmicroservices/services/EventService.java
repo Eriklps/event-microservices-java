@@ -32,7 +32,7 @@ public class EventService {
     }
 
     public List<Event> getUpcomingEvents() {
-        return eventRepository.findByDateAfterOrderByDate(LocalDateTime.now());
+        return eventRepository.findUpcomingEvents(LocalDateTime.now());
     }
 
     public Event createEvent(EventRequestDTO eventRequest) {
