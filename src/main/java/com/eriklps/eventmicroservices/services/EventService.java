@@ -32,7 +32,7 @@ public class EventService {
     }
 
     public List<Event> getUpcomingEvents() {
-        return eventRepository.findUpcomingEvents(LocalDateTime.now());
+        return eventRepository.findByDateAfterOrderByDate(LocalDateTime.now());
     }
 
     public Event createEvent(EventRequestDTO eventRequest) {
@@ -56,7 +56,7 @@ public class EventService {
 
         event.setRegisteredParticipants(event.getRegisteredParticipants() + 1);
 
-        EmailRequestDTO emailRequest = new EmailRequestDTO(participantEmail, "Confirmação de Inscrição", "Você foi inscrito no evento com sucesso!");
+        EmailRequestDTO emailRequest = new EmailRequestDTO(participantEmail, "Sign up confirmation", "You have been successfully registered for the event!");
 
         emailServiceClient.sendEmail(emailRequest);
     }
