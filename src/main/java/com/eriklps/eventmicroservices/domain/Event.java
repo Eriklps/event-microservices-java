@@ -20,5 +20,4 @@ public class Event {
     private String date;
     private String title;
     private String description;
-
 }
